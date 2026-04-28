@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دليل فعاليات الجامعة الافتراضية</title>
+
+    <!-- Start Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- End Font -->
+
+    <!-- Include Bootstrap Library Start -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW"
+      crossorigin="anonymous"
+    />
+
+    <!-- Include Bootstrap Library End -->
+
+    <!-- Include Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          ><img src="./assets/img/logo.jpeg" alt="logo" class="logo" />
+          <span>دليل فعاليات الجامعة الافتراضية</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="events.html">الفعاليات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-banner">
+      <div class="container">
+        <h1 class="fw-bold mb-2">كل الفعاليات</h1>
+        <p class="mb-0 text-secondary">
+          تصفح القائمة الكاملة، وابحث أو قم بالتصفية حسب التصنيف أو التاريخ أو
+          الموقع.
+        </p>
+      </div>
+    </section>
+
+    <main class="pb-5">
+      <div class="container">
+        <div class="filter-box mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-lg-4">
+              <label class="form-label fw-bold" for="searchInput">بحث</label>
+              <input
+                id="searchInput"
+                type="text"
+                class="form-control"
+                placeholder="ابحث حسب عنوان الفعالية..."
+              />
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+              <label class="form-label fw-bold" for="categoryFilter">
+                التصنيف
+              </label>
+              <select id="categoryFilter" class="form-select">
+                <option value="all" selected>الكل</option>
+                <option value="tech">تقنية</option>
+                <option value="culture">ثقافة</option>
+                <option value="sports">رياضة</option>
+                <option value="music">موسيقى</option>
+                <option value="family">عائلي</option>
+                <option value="business">ريادة الأعمال</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label fw-bold" for="locationFilter">
+                الموقع
+              </label>
+              <select id="locationFilter" class="form-select">
+                <option value="all" selected>كل المواقع</option>
+                <option value="hall-a1">القاعة الرقمية A1</option>
+                <option value="library">مكتبة الجامعة</option>
+                <option value="main-hall">البهو الرئيسي</option>
+                <option value="lab-2">مخبر الحاسوب 2</option>
+                <option value="stadium">الملعب الرئيسي</option>
+                <option value="theater">مسرح الجامعة</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-lg-3">
+              <label class="form-label fw-bold" for="dateFilter">التاريخ</label>
+              <select id="dateFilter" class="form-select">
+                <option value="all" selected>كل التواريخ</option>
+                <option value="this-week">هذا الأسبوع</option>
+                <option value="next-week">الأسبوع القادم</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="eventsGrid">
+          <!-- Event 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card event-card tech hall-a1 this-week">
+              <img
+                src="./assets/img/event1.jpeg"
+                class="card-img-top"
+                alt="ورشة تطوير الويب"
+              />
+              <div class="card-body">
+                <span class="badge badge-soft rounded-pill mb-2"> تقنية </span>
+                <h5 class="fw-bold event-title">ورشة تطوير الويب للمبتدئين</h5>
+                <p class="small text-secondary">
+                  26 أبريل 2026 • القاعة الرقمية A1
+                </p>
+                <p>
+                  نشاط عملي لبناء صفحات ويب حديثة باستخدام التقنيات الأساسية.
+                </p>
+                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+                  التفاصيل
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card event-card culture library this-week">
+              <img
+                src="/assets/img/event2.jpeg"
+                class="card-img-top"
+                alt="فعالية ثقافية"
+              />
+              <div class="card-body">
+                <span
+                  class="badge bg-warning-subtle text-warning-emphasis rounded-pill mb-2"
+                >
+                  ثقافة
+                </span>
+                <h5 class="fw-bold event-title">
+                  أمسية ثقافية للقراءة والحوار
+                </h5>
+                <p class="small text-secondary">
+                  28 أبريل 2026 • مكتبة الجامعة
+                </p>
+                <p>
+                  فعالية تعزز التبادل الثقافي والحوار الطلابي في بيئة أكاديمية
+                  هادئة.
+                </p>
+                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+                  التفاصيل
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card event-card business theater this-week">
+              <img
+                src="./assets/img/event3.jpeg"
+                class="card-img-top"
+                alt="فعالية ريادة الأعمال"
+              />
+              <div class="card-body">
+                <span
+                  class="badge bg-info-subtle text-info-emphasis rounded-pill mb-2"
+                >
+                  ريادة الأعمال
+                </span>
+                <h5 class="fw-bold event-title">
+                  ملتقى المشاريع الطلابية الناشئة
+                </h5>
+                <p class="small text-secondary">30 أبريل 2026 • مسرح الجامعة</p>
+                <p>لقاء يجمع المبتكرين والمهتمين بالمشاريع التعاونية.</p>
+                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+                  التفاصيل
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="empty-state" class="search-empty alert alert-warning mt-4">
+          لا توجد فعاليات مطابقة للفلاتر الحالية. جرّب تعديل معايير البحث.
+        </div>
+      </div>
+    </main>
+    <footer class="footer py-4">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h5 class="fw-bold">دليل فعاليات الجامعة الافتراضية</h5>
+            <p class="mb-1">
+              أعضاء الفريق:
+              <br />
+              اسمهان يوسف فاهود (asmahan_32995) - غصون محمد الموسى
+              (ghosun_219387) - عمر طارق قطرية (Omar_290277) - إسرا فيصل الأحمد
+              الشيخ (Esraa_238163) - هبة محمد السهلي (Hiba_324064)
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <h6 class="fw-bold">تواصل معنا</h6>
+            <p class="mb-1">events@svu-guide.edu</p>
+            <p class="mb-0">+963 000 000 000</p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <div class="social-links mb-2">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+            <small>© 2026 جميع الحقوق محفوظة</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
