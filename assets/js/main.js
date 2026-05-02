@@ -177,6 +177,7 @@ function validateInputs(event) {
 if (form !== null) {
   form.onsubmit = validateInputs
 }
+
 //Local storage
 const categoryLinks = document.getElementsByClassName('category-chip')
 const saved = localStorage.getItem('preferredCategory')
@@ -193,4 +194,81 @@ if (categoryLinks.length !== 0) {
     const value = categoryLinks[i].id
     categoryLinks[i].onclick = () => setLocalStorage(value)
   }
+}
+
+//Change color mode
+
+const themeToggle = document.getElementById('themeToggle')
+const savedTheme = localStorage.getItem('theme')
+
+if (themeToggle) {
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode')
+  }
+
+  function toggleTheme() {
+    if (document.body.classList.contains('dark-mode')) {
+      document.body.classList.remove('dark-mode')
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.body.classList.add('dark-mode')
+      localStorage.setItem('theme', 'dark')
+    }
+  }
+  themeToggle.onclick = toggleTheme
+}
+
+//language toggle
+
+const languageToggle = document.getElementById('language-toggle')
+const savedLanguage = localStorage.getItem('language') || 'ar'
+console.log(languageToggle)
+if (languageToggle) {
+  function applyLanguage(language) {
+    const isEnglish = language === 'en'
+
+    const translatedElements = document.getElementsByClassName('content')
+
+    let text = ''
+    for (let i = 0; i < translatedElements.length; i++) {
+      if (isEnglish) {
+        text = translatedElements[i].getAttribute('data-en')
+      } else {
+        text = translatedElements[i].getAttribute('data-ar')
+      }
+
+      translatedElements[i].textContent = text
+      translatedElements[i].setAttribute('value', text)
+      translatedElements[i].setAttribute('placeholder', text)
+    }
+
+    document.documentElement.lang = language
+    document.documentElement.dir = isEnglish ? 'ltr' : 'rtl'
+
+    if (isEnglish) {
+      document.body.classList.remove('lang-ar')
+      document.body.classList.add('lang-en')
+    } else {
+      document.body.classList.remove('lang-en')
+      document.body.classList.add('lang-ar')
+    }
+
+    localStorage.setItem('language', language)
+  }
+
+  function toggleLanguage() {
+    const currentLanguage = localStorage.getItem('language') || 'ar'
+    let nextLanguage
+    if (currentLanguage === 'ar') {
+      nextLanguage = 'en'
+    } else {
+      nextLanguage = 'ar'
+    }
+
+    applyLanguage(nextLanguage)
+  }
+
+  applyLanguage(savedLanguage)
+
+  languageToggle.onclick = toggleLanguage
 }
