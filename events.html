@@ -16,12 +16,11 @@
 
     <!-- Include Bootstrap Library Start -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css"
-      integrity="sha384-CfCrinSRH2IR6a4e6fy2q6ioOX7O6Mtm1L9vRvFZ1trBncWmMePhzvafv7oIcWiW"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
     <!-- Include Bootstrap Library End -->
 
     <!-- Include Bootstrap icons -->
@@ -34,43 +33,128 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html"
-          ><img src="./assets/img/logo.jpeg" alt="logo" class="logo" />
-          <span>دليل فعاليات الجامعة الافتراضية</span>
+        <a class="navbar-brand fw-bold" href="index.html">
+          <img src="./assets/img/logo.png" alt="logo" class="logo" alt="logo" />
+          <span
+            class="content"
+            data-ar="دليل فعاليات الجامعة الافتراضية"
+            data-en="Virtual University Events Guide"
+          >
+            دليل فعاليات الجامعة الافتراضية
+          </span>
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNav"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">الرئيسية</a>
+              <a
+                class="nav-link content"
+                href="index.html"
+                data-ar="الرئيسية"
+                data-en="Home"
+              >
+                الرئيسية
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link active" href="events.html">الفعاليات</a>
+              <a
+                class="nav-link active content"
+                href="events.html"
+                data-ar="الفعاليات"
+                data-en="Events"
+              >
+                الفعاليات
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="about.html">من نحن</a>
+              <a
+                class="nav-link content"
+                href="about.html"
+                data-ar="من نحن"
+                data-en="About"
+              >
+                من نحن
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">اتصل بنا</a>
+              <a
+                class="nav-link content"
+                href="contact.html"
+                data-ar="اتصل بنا"
+                data-en="Contact"
+              >
+                اتصل بنا
+              </a>
             </li>
           </ul>
+
+          <div class="navbar-actions">
+            <button
+              id="language-toggle"
+              class="toggle language-toggle"
+              type="button"
+              aria-label="Change language"
+            >
+              <span class="lang-option lang-en">
+                <img src="./assets/img/uk.png" alt="English" />
+              </span>
+              <span class="lang-option lang-ar">
+                <img src="./assets/img/sy.png" alt="Arabic" />
+              </span>
+
+              <span class="language-thumb thumb"></span>
+            </button>
+
+            <button
+              id="themeToggle"
+              class="toggle"
+              type="button"
+              aria-label="Toggle theme"
+            >
+              <span class="toggle-icon theme-moon">
+                <i class="bi bi-moon-fill"></i>
+              </span>
+              <span class="toggle-icon theme-sun">
+                <i class="bi bi-brightness-high-fill"></i>
+              </span>
+
+              <span class="toggle-thumb thumb"></span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
 
     <section class="page-banner">
       <div class="container">
-        <h1 class="fw-bold mb-2">كل الفعاليات</h1>
-        <p class="mb-0 text-secondary">
+        <h1
+          class="content fw-bold mb-2"
+          data-ar="كل الفعاليات"
+          data-en="All Events"
+        >
+          كل الفعاليات
+        </h1>
+
+        <p
+          class="content mb-0 text-secondary"
+          data-ar="تصفح القائمة الكاملة، وابحث أو قم بالتصفية حسب التصنيف أو التاريخ أو الموقع."
+          data-en="Browse the full list, search, or filter by category, date, or location."
+        >
           تصفح القائمة الكاملة، وابحث أو قم بالتصفية حسب التصنيف أو التاريخ أو
           الموقع.
         </p>
@@ -82,51 +166,203 @@
         <div class="filter-box mb-4">
           <div class="row g-3 align-items-end">
             <div class="col-lg-4">
-              <label class="form-label fw-bold" for="searchInput">بحث</label>
+              <label
+                class="content form-label fw-bold"
+                for="searchInput"
+                data-ar="بحث"
+                data-en="Search"
+              >
+                بحث
+              </label>
+
               <input
                 id="searchInput"
                 type="text"
                 class="form-control"
                 placeholder="ابحث حسب عنوان الفعالية..."
+                data-ar-placeholder="ابحث حسب عنوان الفعالية..."
+                data-en-placeholder="Search by event title..."
               />
             </div>
 
             <div class="col-md-4 col-lg-2">
-              <label class="form-label fw-bold" for="categoryFilter">
+              <label
+                class="content form-label fw-bold"
+                for="categoryFilter"
+                data-ar="التصنيف"
+                data-en="Category"
+              >
                 التصنيف
               </label>
+
               <select id="categoryFilter" class="form-select">
-                <option value="all" selected>الكل</option>
-                <option value="tech">تقنية</option>
-                <option value="culture">ثقافة</option>
-                <option value="sports">رياضة</option>
-                <option value="music">موسيقى</option>
-                <option value="family">عائلي</option>
-                <option value="business">ريادة الأعمال</option>
+                <option
+                  class="content"
+                  value="all"
+                  selected
+                  data-ar="الكل"
+                  data-en="All"
+                >
+                  الكل
+                </option>
+                <option
+                  class="content"
+                  value="tech"
+                  data-ar="تقنية"
+                  data-en="Technology"
+                >
+                  تقنية
+                </option>
+                <option
+                  class="content"
+                  value="culture"
+                  data-ar="ثقافة"
+                  data-en="Culture"
+                >
+                  ثقافة
+                </option>
+                <option
+                  class="content"
+                  value="sports"
+                  data-ar="رياضة"
+                  data-en="Sports"
+                >
+                  رياضة
+                </option>
+                <option
+                  class="content"
+                  value="music"
+                  data-ar="موسيقى"
+                  data-en="Music"
+                >
+                  موسيقى
+                </option>
+                <option
+                  class="content"
+                  value="family"
+                  data-ar="عائلي"
+                  data-en="Family"
+                >
+                  عائلي
+                </option>
+                <option
+                  class="content"
+                  value="business"
+                  data-ar="ريادة الأعمال"
+                  data-en="Entrepreneurship"
+                >
+                  ريادة الأعمال
+                </option>
               </select>
             </div>
 
             <div class="col-md-4 col-lg-3">
-              <label class="form-label fw-bold" for="locationFilter">
+              <label
+                class="content form-label fw-bold"
+                for="locationFilter"
+                data-ar="الموقع"
+                data-en="Location"
+              >
                 الموقع
               </label>
+
               <select id="locationFilter" class="form-select">
-                <option value="all" selected>كل المواقع</option>
-                <option value="hall-a1">القاعة الرقمية A1</option>
-                <option value="library">مكتبة الجامعة</option>
-                <option value="main-hall">البهو الرئيسي</option>
-                <option value="lab-2">مخبر الحاسوب 2</option>
-                <option value="stadium">الملعب الرئيسي</option>
-                <option value="theater">مسرح الجامعة</option>
+                <option
+                  class="content"
+                  value="all"
+                  selected
+                  data-ar="كل المواقع"
+                  data-en="All Locations"
+                >
+                  كل المواقع
+                </option>
+                <option
+                  class="content"
+                  value="hall-a1"
+                  data-ar="القاعة الرقمية A1"
+                  data-en="Digital Hall A1"
+                >
+                  القاعة الرقمية A1
+                </option>
+                <option
+                  class="content"
+                  value="library"
+                  data-ar="مكتبة الجامعة"
+                  data-en="University Library"
+                >
+                  مكتبة الجامعة
+                </option>
+                <option
+                  class="content"
+                  value="main-hall"
+                  data-ar="البهو الرئيسي"
+                  data-en="Main Hall"
+                >
+                  البهو الرئيسي
+                </option>
+                <option
+                  class="content"
+                  value="lab-2"
+                  data-ar="مخبر الحاسوب 2"
+                  data-en="Computer Lab 2"
+                >
+                  مخبر الحاسوب 2
+                </option>
+                <option
+                  class="content"
+                  value="stadium"
+                  data-ar="الملعب الرئيسي"
+                  data-en="Main Stadium"
+                >
+                  الملعب الرئيسي
+                </option>
+                <option
+                  class="content"
+                  value="theater"
+                  data-ar="مسرح الجامعة"
+                  data-en="University Theater"
+                >
+                  مسرح الجامعة
+                </option>
               </select>
             </div>
 
             <div class="col-md-4 col-lg-3">
-              <label class="form-label fw-bold" for="dateFilter">التاريخ</label>
+              <label
+                class="content form-label fw-bold"
+                for="dateFilter"
+                data-ar="التاريخ"
+                data-en="Date"
+              >
+                التاريخ
+              </label>
+
               <select id="dateFilter" class="form-select">
-                <option value="all" selected>كل التواريخ</option>
-                <option value="this-week">هذا الأسبوع</option>
-                <option value="next-week">الأسبوع القادم</option>
+                <option
+                  class="content"
+                  value="all"
+                  selected
+                  data-ar="كل التواريخ"
+                  data-en="All Dates"
+                >
+                  كل التواريخ
+                </option>
+                <option
+                  class="content"
+                  value="this-week"
+                  data-ar="هذا الأسبوع"
+                  data-en="This Week"
+                >
+                  هذا الأسبوع
+                </option>
+                <option
+                  class="content"
+                  value="next-week"
+                  data-ar="الأسبوع القادم"
+                  data-en="Next Week"
+                >
+                  الأسبوع القادم
+                </option>
               </select>
             </div>
           </div>
@@ -140,17 +376,49 @@
                 src="./assets/img/event1.jpeg"
                 class="card-img-top"
                 alt="ورشة تطوير الويب"
+                data-ar-alt="ورشة تطوير الويب"
+                data-en-alt="Web Development Workshop"
               />
+
               <div class="card-body">
-                <span class="badge badge-soft rounded-pill mb-2"> تقنية </span>
-                <h5 class="fw-bold event-title">ورشة تطوير الويب للمبتدئين</h5>
-                <p class="small text-secondary">
+                <span
+                  class="content badge badge-soft rounded-pill mb-2"
+                  data-ar="تقنية"
+                  data-en="Technology"
+                >
+                  تقنية
+                </span>
+
+                <h5
+                  class="content fw-bold event-title"
+                  data-ar="ورشة تطوير الويب للمبتدئين"
+                  data-en="Web Development Workshop for Beginners"
+                >
+                  ورشة تطوير الويب للمبتدئين
+                </h5>
+
+                <p
+                  class="content small text-secondary"
+                  data-ar="26 أبريل 2026 • القاعة الرقمية A1"
+                  data-en="April 26, 2026 • Digital Hall A1"
+                >
                   26 أبريل 2026 • القاعة الرقمية A1
                 </p>
-                <p>
+
+                <p
+                  class="content"
+                  data-ar="نشاط عملي لبناء صفحات ويب حديثة باستخدام التقنيات الأساسية."
+                  data-en="A practical activity for building modern web pages using basic technologies."
+                >
                   نشاط عملي لبناء صفحات ويب حديثة باستخدام التقنيات الأساسية.
                 </p>
-                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+
+                <a
+                  href="event.html"
+                  class="content btn btn-primary btn-sm event-btn"
+                  data-ar="التفاصيل"
+                  data-en="Details"
+                >
                   التفاصيل
                 </a>
               </div>
@@ -164,24 +432,50 @@
                 src="/assets/img/event2.jpeg"
                 class="card-img-top"
                 alt="فعالية ثقافية"
+                data-ar-alt="فعالية ثقافية"
+                data-en-alt="Cultural Event"
               />
+
               <div class="card-body">
                 <span
-                  class="badge bg-warning-subtle text-warning-emphasis rounded-pill mb-2"
+                  class="content badge bg-warning-subtle text-warning-emphasis rounded-pill mb-2"
+                  data-ar="ثقافة"
+                  data-en="Culture"
                 >
                   ثقافة
                 </span>
-                <h5 class="fw-bold event-title">
+
+                <h5
+                  class="content fw-bold event-title"
+                  data-ar="أمسية ثقافية للقراءة والحوار"
+                  data-en="Cultural Evening for Reading and Dialogue"
+                >
                   أمسية ثقافية للقراءة والحوار
                 </h5>
-                <p class="small text-secondary">
+
+                <p
+                  class="content small text-secondary"
+                  data-ar="28 أبريل 2026 • مكتبة الجامعة"
+                  data-en="April 28, 2026 • University Library"
+                >
                   28 أبريل 2026 • مكتبة الجامعة
                 </p>
-                <p>
+
+                <p
+                  class="content"
+                  data-ar="فعالية تعزز التبادل الثقافي والحوار الطلابي في بيئة أكاديمية هادئة."
+                  data-en="An event that promotes cultural exchange and student dialogue in a calm academic environment."
+                >
                   فعالية تعزز التبادل الثقافي والحوار الطلابي في بيئة أكاديمية
                   هادئة.
                 </p>
-                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+
+                <a
+                  href="event.html"
+                  class="content btn btn-primary btn-sm event-btn"
+                  data-ar="التفاصيل"
+                  data-en="Details"
+                >
                   التفاصيل
                 </a>
               </div>
@@ -195,19 +489,49 @@
                 src="./assets/img/event3.jpeg"
                 class="card-img-top"
                 alt="فعالية ريادة الأعمال"
+                data-ar-alt="فعالية ريادة الأعمال"
+                data-en-alt="Entrepreneurship Event"
               />
+
               <div class="card-body">
                 <span
-                  class="badge bg-info-subtle text-info-emphasis rounded-pill mb-2"
+                  class="content badge bg-info-subtle text-info-emphasis rounded-pill mb-2"
+                  data-ar="ريادة الأعمال"
+                  data-en="Entrepreneurship"
                 >
                   ريادة الأعمال
                 </span>
-                <h5 class="fw-bold event-title">
+
+                <h5
+                  class="content fw-bold event-title"
+                  data-ar="ملتقى المشاريع الطلابية الناشئة"
+                  data-en="Student Startup Projects Forum"
+                >
                   ملتقى المشاريع الطلابية الناشئة
                 </h5>
-                <p class="small text-secondary">30 أبريل 2026 • مسرح الجامعة</p>
-                <p>لقاء يجمع المبتكرين والمهتمين بالمشاريع التعاونية.</p>
-                <a href="event.html" class="btn btn-primary btn-sm event-btn">
+
+                <p
+                  class="content small text-secondary"
+                  data-ar="30 أبريل 2026 • مسرح الجامعة"
+                  data-en="April 30, 2026 • University Theater"
+                >
+                  30 أبريل 2026 • مسرح الجامعة
+                </p>
+
+                <p
+                  class="content"
+                  data-ar="لقاء يجمع المبتكرين والمهتمين بالمشاريع التعاونية."
+                  data-en="A meeting that brings together innovators and those interested in collaborative projects."
+                >
+                  لقاء يجمع المبتكرين والمهتمين بالمشاريع التعاونية.
+                </p>
+
+                <a
+                  href="event.html"
+                  class="content btn btn-primary btn-sm event-btn"
+                  data-ar="التفاصيل"
+                  data-en="Details"
+                >
                   التفاصيل
                 </a>
               </div>
@@ -215,7 +539,12 @@
           </div>
         </div>
 
-        <div id="empty-state" class="search-empty alert alert-warning mt-4">
+        <div
+          id="empty-state"
+          class="content search-empty alert alert-warning mt-4"
+          data-ar="لا توجد فعاليات مطابقة للفلاتر الحالية. جرّب تعديل معايير البحث."
+          data-en="No events match the current filters. Try changing the search criteria."
+        >
           لا توجد فعاليات مطابقة للفلاتر الحالية. جرّب تعديل معايير البحث.
         </div>
       </div>
@@ -224,27 +553,63 @@
       <div class="container">
         <div class="row g-4 align-items-center">
           <div class="col-lg-6">
-            <h5 class="fw-bold">دليل فعاليات الجامعة الافتراضية</h5>
-            <p class="mb-1">
+            <h5
+              class="fw-bold content"
+              data-ar="دليل فعاليات الجامعة الافتراضية"
+              data-en="Virtual University Events Guide"
+            >
+              دليل فعاليات الجامعة الافتراضية
+            </h5>
+
+            <p
+              class="mb-1 content"
+              data-ar="أعضاء الفريق: اسمهان يوسف فاهود (asmahan_32995) - غصون محمد الموسى (ghosun_219387) - عمر طارق قطرية (Omar_290277) - إسراء فيصل الأحمد الشيخ (Esraa_238163) - هبة محمد السهلي (Hiba_324064)"
+              data-en="Team members: Asmahan Youssef Fahoud (asmahan_32995) - Ghosun Mohammad Al-Mousa (ghosun_219387) - Omar Tarek Qatriya (Omar_290277) - Esraa Faisal Al-Ahmad Al-Sheikh (Esraa_238163) - Hiba Mohammad Al-Sahli (Hiba_324064)"
+            >
               أعضاء الفريق:
               <br />
               اسمهان يوسف فاهود (asmahan_32995) - غصون محمد الموسى
               (ghosun_219387) - عمر طارق قطرية (Omar_290277) - إسراء فيصل الأحمد
               الشيخ (Esraa_238163) - هبة محمد السهلي (Hiba_324064)
             </p>
+            <p class="mb-1 content" data-ar="الصف: C8" data-en="Class: C8">
+              الصف: C8
+            </p>
           </div>
+
           <div class="col-lg-3">
-            <h6 class="fw-bold">تواصل معنا</h6>
+            <h6
+              class="fw-bold content"
+              data-ar="تواصل معنا"
+              data-en="Contact Us"
+            >
+              تواصل معنا
+            </h6>
+
             <p class="mb-1">events@svu-guide.edu</p>
             <p class="mb-0">+963 000 000 000</p>
           </div>
+
           <div class="col-lg-3 text-lg-end">
             <div class="social-links mb-2">
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
             </div>
-            <small>© 2026 جميع الحقوق محفوظة</small>
+
+            <small
+              class="content"
+              data-ar="© 2026 جميع الحقوق محفوظة"
+              data-en="© 2026 All rights reserved"
+            >
+              © 2026 جميع الحقوق محفوظة
+            </small>
           </div>
         </div>
       </div>
