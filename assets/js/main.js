@@ -218,28 +218,53 @@ if (themeToggle) {
   themeToggle.onclick = toggleTheme
 }
 
-//language toggle
+// Language toggle
 
 const languageToggle = document.getElementById('language-toggle')
 const savedLanguage = localStorage.getItem('language') || 'ar'
-console.log(languageToggle)
+
 if (languageToggle) {
   function applyLanguage(language) {
     const isEnglish = language === 'en'
 
     const translatedElements = document.getElementsByClassName('content')
+    const translatedInputs = document.getElementsByClassName('content-input')
+    const translatedBtns = document.getElementsByClassName('content-btn')
 
-    let text = ''
     for (let i = 0; i < translatedElements.length; i++) {
-      if (isEnglish) {
-        text = translatedElements[i].getAttribute('data-en')
-      } else {
-        text = translatedElements[i].getAttribute('data-ar')
-      }
+      const element = translatedElements[i]
 
-      translatedElements[i].textContent = text
-      translatedElements[i].setAttribute('value', text)
-      translatedElements[i].setAttribute('placeholder', text)
+      const text = isEnglish
+        ? element.getAttribute('data-en')
+        : element.getAttribute('data-ar')
+
+      if (text !== null) {
+        element.textContent = text
+      }
+    }
+
+    for (let i = 0; i < translatedInputs.length; i++) {
+      const input = translatedInputs[i]
+
+      const placeholder = isEnglish
+        ? input.getAttribute('data-en-placeholder')
+        : input.getAttribute('data-ar-placeholder')
+
+      if (placeholder !== null) {
+        input.setAttribute('placeholder', placeholder)
+      }
+    }
+
+    for (let i = 0; i < translatedBtns.length; i++) {
+      const btn = translatedBtns[i]
+
+      const value = isEnglish
+        ? btn.getAttribute('data-en-value')
+        : btn.getAttribute('data-ar-value')
+
+      if (value !== null) {
+        btn.setAttribute('value', value)
+      }
     }
 
     document.documentElement.lang = language
@@ -258,12 +283,7 @@ if (languageToggle) {
 
   function toggleLanguage() {
     const currentLanguage = localStorage.getItem('language') || 'ar'
-    let nextLanguage
-    if (currentLanguage === 'ar') {
-      nextLanguage = 'en'
-    } else {
-      nextLanguage = 'ar'
-    }
+    const nextLanguage = currentLanguage === 'ar' ? 'en' : 'ar'
 
     applyLanguage(nextLanguage)
   }
